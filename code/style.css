@@ -20,13 +20,13 @@
     margin: 0;
     padding: 10px 0;
   }
-  
+  /* responsive for website */
   @media (max-width: 768px) {
     .grid-container {
       grid-template-columns: repeat(2, 1fr);
     }
   }
-  
+   /* responsive for mobile */
   @media (max-width: 480px) {
     .grid-container {
       grid-template-columns: 1fr;

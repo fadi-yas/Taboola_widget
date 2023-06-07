@@ -1,6 +1,6 @@
 // Fetch recommendations from the API
 async function getRecommendations() {
-    const url = "http://api.taboola.com/1.0/json/taboola-templates/recommendations.get?app.type=desktop&app.apikey=f9040ab1b9c802857aa783c469d0e0ff7e7366e4&count=4&source.type=video&source.id=214321562187&source.url=http://www.site.com/videos/214321562187.html";
+    const url = "http://api.taboola.com/1.0/json/taboola-templates/recommendations.get?app.type=desktop&app.apikey=f9040ab1b9c802857aa783c469d0e0ff7e7366e4&count=9&source.type=video&source.id=214321562187&source.url=http://www.site.com/videos/214321562187.html";
     
     try {
         const response = await fetch(url);
@@ -35,7 +35,7 @@ function renderRecommendations(recommendations) {
             </a>
         </div>
     `;
-    console.log(recommendation.url)
+    console.log(recommendation.url); // try for build api that fetch image from google  
     
         if (recommendation.origin === "sponsored") {
             sponsoredContainer.innerHTML += productDiv;
@@ -51,3 +51,8 @@ function renderRecommendations(recommendations) {
     const recommendations = await getRecommendations();
     renderRecommendations(recommendations);
  });
+
+ module.exports = {
+    getRecommendations,
+    renderRecommendations
+  }; // export models for unit test  
